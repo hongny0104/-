@@ -55,18 +55,8 @@ with col3:
 총점 = 점_사업 + 점_지역 + 점_경영상태 + 점_기술자 + 점_계약질서 + 가격점수
 
 # -------------------------------
-# 출력
-st.header("3. 결과 분석")
-st.subheader("예정가격 시뮬레이션")
-예정가격표_df = pd.DataFrame.from_dict(예정가격표, orient='index', columns=['예정가격']).rename_axis('예가율')
-예정가격표_df['입찰가격'] = (예정가격표_df['예정가격'] * 낙찰입찰률).round().astype(int)
-예정가격표_df['예정가격'] = 예정가격표_df['예정가격'].apply(lambda x: f"{x:,}")
-예정가격표_df['입찰가격'] = 예정가격표_df['입찰가격'].apply(lambda x: f"{x:,}")
-st.write(예정가격표_df)
-
-
-# -------------------------------
 # 📌 사용자가 입찰가를 선택하여 분석
+st.header("3. 결과 분석")
 st.subheader("입찰가격 선택 시 자동 분석")
 
 선택입찰가 = st.selectbox("입찰가격 선택 (예정가격 시뮬레이션 참고)", [int(str(x).replace(",", "")) for x in 예정가격표_df["입찰가격"]])
