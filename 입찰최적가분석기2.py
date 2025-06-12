@@ -37,7 +37,6 @@ with col1:
     점_지역 = st.number_input("지역업체참여도", min_value=0.0, max_value=8.0, step=0.5)
 with col2:
     점_경영상태 = st.number_input("경영상태", min_value=0.0, max_value=2.0, step=0.5)
-    점_입찰가격 = st.number_input("입찰가격", min_value=-0.0, max_value=60.0, step=0.5)
 with col3:
     점_기술자 = st.number_input("기술자보유 감점 (없으면 0)", min_value=-10.0, max_value=0.0, step=1.0)
     점_계약질서 = st.number_input("계약질서 감점 (없으면 0)", min_value=-1.0, max_value=0.0, step=1.0)
